@@ -10,8 +10,9 @@ def carrega_dados(caminho_arquivo):
 
 def salva_dados(caminho_arquivo, dataframe):
     dataframe.to_csv(caminho_arquivo, index=False, sep=";")
+st.markdown("---")
 
-arquivo_csv = "arquivo_dados.csv"
+arquivo_csv = "dados.csv"
 
 st.markdown("# Gerenciador de Atividades")
 st.markdown("**Atualize**, **adicione**, **remova**  ou **desative** suas atividades.")
@@ -27,8 +28,8 @@ with st.container():
     )
 
 with st.container():
-    if st.button("Atualizar Atividades", type="primary"):
+    if st.button("Atualizar", type="primary"):
         salva_dados(arquivo_csv, edita_dados)
-        st.success("Dados atualizados com sucesso!")
+        st.success("Dados atualizados")
 
 st.markdown("---")
